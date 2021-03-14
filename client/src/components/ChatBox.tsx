@@ -6,12 +6,13 @@ type Props = {
 
 const ChatBox = ({ onSendMessage, message, onMessageType }: Props) => {
     return (
-        <div className="flex flex-row items-center h-16 rounded-xl bg-white w-full px-4">
-            <div className="flex-grow ml-4">
+        <div className="flex flex-row items-center h-16 rounded-xl bg-white w-full px-1">
+            <div className="flex-grow ml-1">
                 <div className="relative w-full">
                     <input
                         onChange={onMessageType}
                         value={message}
+                        placeholder="type message"
                         onKeyUp={(evt) => {
                             if (evt.keyCode === 13) {
                                 onSendMessage();

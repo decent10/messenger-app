@@ -16,25 +16,24 @@ const Login = ({ title, onChange, value, onLogin }: Props) => (
                 {title}
             </h2>
             <form className="mt-10" method="POST">
-                <label
-                    htmlFor="user"
-                    className="block mt-2 text-xs font-semibold text-gray-600 uppercase"
-                >
-                    User name
-                </label>
-                <input
-                    onChange={onChange}
-                    value={value}
-                    id="user"
-                    type="text"
-                    name="user"
-                    placeholder="Ahmad"
-                    className="block w-full py-3 px-1 mt-2 mb-4
-                    text-gray-800 appearance-none 
-                    border-b-2 border-gray-100
-                    focus:text-gray-500 focus:outline-none focus:border-gray-200"
-                    required
-                />
+                <div className="col-span-6">
+                    <label
+                        htmlFor="street_address"
+                        className="block text-sm font-medium text-gray-700"
+                    >
+                        User name
+                    </label>
+                    <input
+                        onChange={onChange}
+                        value={value}
+                        id="user"
+                        type="text"
+                        name="user"
+                        placeholder="type user name"
+                        className="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm border  border-gray-500 rounded p-2"
+                    />
+                </div>
+
                 <button
                     onClick={onLogin}
                     className="w-full py-3 mt-10 flex items-center justify-center bg-indigo-500 hover:bg-indigo-600 rounded-xl text-white px-4 py-1 flex-shrink-0 rounded-sm

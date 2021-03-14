@@ -6,9 +6,13 @@ import SEND_MESSAGE from './graphql/mutation/sendMessage';
 import Login from './components/Login';
 import ChatRoom from './components/ChatRoom';
 import ChatBox from './components/ChatBox';
+import { Message } from './type';
+type MessageType = {
+    messages: Message[];
+};
 
 function App() {
-    const { data, loading } = useSubscription(GET_MESSAGES);
+    const { data, loading } = useSubscription<MessageType>(GET_MESSAGES);
     const [sendMessage] = useMutation(SEND_MESSAGE);
     const [user, setUser] = useState<string | ''>('');
     const [message, setMessage] = useState<string | ''>('');
@@ -53,7 +57,7 @@ function App() {
                             <div className="flex flex-col flex-auto flex-shrink-0 rounded-2xl bg-gray-100 h-full p-4">
                                 <ChatRoom
                                     user={user}
-                                    messages={data.messages}
+                                    messages={data!.messages}
                                 />
                                 <ChatBox
                                     message={message}

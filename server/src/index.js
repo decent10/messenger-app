@@ -18,10 +18,8 @@ const server = new ApolloServer({
   context: { pubsub },
   subscriptions: {
     onConnect: (connectionParams, webSocket, context) => {
-      // console.log("Client connected", connectionParams, context);
     },
     onDisconnect: (webSocket, context) => {
-      console.log("Client disconnected", context, );
     },
   },
 });

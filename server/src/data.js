@@ -1,10 +1,12 @@
-export let MESSAGES = [];
-
+export const MESSAGES = [];
+export const subscribers = [];
 const removeItem = (arr, value) => {
   return arr.filter(function (ele) {
     return ele != value;
   });
 };
+
+export const onMessagesUpdates = (fn) => subscribers.push(fn);
 
 export const updateMessage = (message) => {
   const msgIndex = MESSAGES.findIndex((msg) => msg.id == message.id);
